@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class CaracterTipo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Ingrese un caracter: ");
+        char caracter = scanner.next().charAt(0);
+        int asciivalor = (int) caracter;
+        
+        if (asciivalor >= 49 && asciivalor <= 57) {
+            System.out.println("Es un número");
+        } else if (asciivalor >= 65 && asciivalor <= 90) {
+            System.out.println("Es una letra mayúscula");
+        } else if (asciivalor >= 97 && asciivalor <= 122) {
+            System.out.println("Es una letra minúscula");
+        } else {
+            System.out.println("No es ni una letra ni un número");
+        }
+    }
+}
