@@ -1,0 +1,28 @@
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Scanner;
+
+public class EdadCalculadora {
+    public static void main(String[] args) {
+        LocalDate currentDate = LocalDate.now();
+        int dia = currentDate.getDayOfMonth();
+        int mes = currentDate.getMonthValue();
+        int anno = currentDate.getYear();
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese su fecha de nacimiento:");
+        int diaNaci = scanner.nextInt();
+        int mesNaci = scanner.nextInt();
+        int annoNaci = scanner.nextInt();
+        
+        int edad;
+        if (mesNaci < mes || (mesNaci == mes && diaNaci <= dia)) {
+            edad = anno - annoNaci;
+        } else {
+            edad = anno - annoNaci - 1;
+        }
+        
+        System.out.println("Usted tiene " + edad + " años");
+    }
+}
