@@ -1,0 +1,51 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class NumerosOrdenados {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese 4 números:");
+        int numero1 = scanner.nextInt();
+        int numero2 = scanner.nextInt();
+        int numero3 = scanner.nextInt();
+        int numero4 = scanner.nextInt();
+        
+        int mayor, menor, mayorinte, menorinte;
+        
+        if (numero1 >= numero2 && numero1 >= numero3 && numero1 >= numero4) {
+            mayor = numero1;
+        } else if (numero2 >= numero1 && numero2 >= numero3 && numero2 >= numero4) {
+            mayor = numero2;
+        } else if (numero3 >= numero1 && numero3 >= numero2 && numero3 >= numero4) {
+            mayor = numero3;
+        } else {
+            mayor = numero4;
+        }
+        
+        if (numero1 <= numero2 && numero1 <= numero3 && numero1 <= numero4) {
+            menor = numero1;
+        } else if (numero2 <= numero1 && numero2 <= numero3 && numero2 <= numero4) {
+            menor = numero2;
+        } else if (numero3 <= numero1 && numero3 <= numero2 && numero3 <= numero4) {
+            menor = numero3;
+        } else {
+            menor = numero4;
+        }
+        
+        ArrayList<Integer> intermedios = new ArrayList<>();
+        intermedios.add(numero1);
+        intermedios.add(numero2);
+        intermedios.add(numero3);
+        intermedios.add(numero4);
+        intermedios.remove(Integer.valueOf(mayor));
+        intermedios.remove(Integer.valueOf(menor));
+        Collections.sort(intermedios);
+        
+        mayorinte = intermedios.get(1);
+        menorinte = intermedios.get(0);
+        
+        System.out.println(menor + " " + menorinte + " " + mayorinte + " " + mayor);
+    }
+}
